@@ -1,0 +1,86 @@
+
+// ==========================================================================
+// Layout Grids
+// ==========================================================================
+
+
+
+.container{
+@extend %clearfix;
+@extend %container-centered;
+width:90%;
+@include mq(medium-flex){
+$brkpoint-md    : 768;
+max-width: $brkpoint-md * 1px;
+margin:0 auto;
+}
+}
+
+.grid {
+@include element('row'){
+@extend %center-align; 
+
+@include mq(medium-flex){
+ display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+}
+&__{
+$grid__cols: 12;
+$gutter: 1rem;
+@for $i from 1 through $grid__cols {
+    &col--#{$i} {
+flex: $i 1 0;
+margin: $gutter/2
+
+  }
+}
+}
+}
+
+// =============================================================================
+// Theme Colours Layout 
+// =============================================================================
+
+$poly-grid: (
+	
+	grid__col--8  : #fd9f85,
+	grid__col--7  : #ec9fa3,
+	grid__col--6  : #3fabca,
+	grid__col--4  : #7ee6fd,
+	grid__col--5  : #88d9a0,
+	grid__col--3  : #bea1c9,
+	grid__col--12 : #80e8d1,
+);
+
+// Generate Poly grid display classes
+@each $value, $color in $poly-grid {
+	 .#{$value}.theme__colors {
+		background-color: $color;
+	}
+}
+
+
+// Grid theme colours display
+[class^="grid__col--"]  {
+	 font-size : em(14px);
+	font-weight: $font-weight--thin;
+	color: palette(black, light);
+		margin-top: em(12px);
+		margin-bottom: em(12px);
+		padding: 15px 30px;
+	border-radius:$br--default;
+	@include mq(medium-flex)  { 
+		
+
+	}
+	
+}
+
+
+.centered{
+
+}
+
+

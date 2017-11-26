@@ -1,0 +1,45 @@
+// ==========================================================================
+// Form Elements
+// ==========================================================================
+
+.form {
+	@include element(label) {
+		@include modifier(hidden) {
+			@extend .srt;
+					
+					margin-bottom: em(10px);
+				
+		}
+
+	}
+
+	@include element(input) {
+		display:block;
+	    padding:10px;
+		font-size : em(18px);
+		margin-bottom: em(20px, 18px);
+		border-bottom: 6px solid $color-primary;
+		color: palette(black, dark);
+		font-weight: $font-weight--light;
+
+		@include mq(small){
+	
+		}
+
+		&:focus {	
+			border-color: $color-primary;
+			 @include transition(background-color 1s 2s, color 2s);
+		}
+	}
+}
+
+.form{
+@include mq(medium-flex){
+margin-top: em(20px);
+}
+
+[class^="btn--"] {
+	width:100% !important;
+}
+
+}

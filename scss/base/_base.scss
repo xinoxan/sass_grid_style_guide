@@ -1,0 +1,78 @@
+
+
+.headline {
+
+@include modifier ('primary') {
+@extend %center-align;
+color: $color-primary;
+  font-weight: $font-weight--bold;
+  font-size: em(28px);
+  font-family:$font-family--primary ;
+}
+
+@include modifier ('secondary') {
+color: palette(grey, light);
+  font-weight: $font-weight--thin;
+  font-size: em(16px);
+  font-family: $font-family--primary;
+  text-align:left;
+  margin-left:em(20px);
+
+@include mq(small){
+margin-bottom:em(20px);
+}
+}
+
+
+}
+
+
+p {
+	@include line-height(12);
+color: palette(grey, light);
+  font-weight: $font-weight--medium;
+    font-size: em(16px);
+
+    @include mq(medium-flex){
+	font-size: em(16px);
+	margin-bottom: em(10px);
+    }
+}
+
+a {
+	color: $color-link; 
+	text-decoration: none;
+	font-weight: $font-weight--bold;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+.card{
+text-align:left;
+@include mq(small){
+margin: em(10px, 18px) 0;
+}
+}
+
+
+blockquote {
+	color: $color-text;
+	padding-left:em(10px);
+	border-left: em(8px, 24px) solid $color-primary; 
+	font-weight: $font-weight--light;
+	font-style : italic;
+	font-size : em(20px);
+
+	@include mq(small){
+	margin-top: em(30px);
+	}
+
+	@include mq(medium-flex) {
+		margin: em(32px, 24px) 0;
+		padding: 0 0 0 5%;
+		font-size: em(24px);
+	}
+}

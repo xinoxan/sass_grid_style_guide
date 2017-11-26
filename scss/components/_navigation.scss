@@ -1,0 +1,18 @@
+
+.nav {
+
+.nav{
+margin-bottom: em(30px);
+@include element(item) {
+    @extend %nav-item-mobile;   
+    
+    a {
+      @extend %nav-item-link;
+      color: palette(grey);
+      &:hover {
+        @extend %nav-item-on;
+      }
+    }
+  }
+}
+}

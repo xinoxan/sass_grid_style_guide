@@ -1,0 +1,100 @@
+
+// ==========================================================================
+// Extends
+// ==========================================================================
+
+
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Screen reader text
+
+.srt {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+// Center alignment
+
+%center-align {
+	text-align: center;
+}
+
+
+// Center layout
+
+%container-centered{
+max-width:1200px;
+margin-left:auto;
+margin-right:auto;
+}
+
+// Navigation placeholders
+
+%nav-item-link {
+  font-weight: $font-weight--light;
+  font-size: em(18px);
+  display: block;
+ padding-top:20px;
+ padding-bottom:20px;
+  @include mq(small) {
+    padding-top: em(14px, 18px);
+    padding-bottom: em(14px, 18px);
+  }
+
+  @include mq(medium-flex){
+  padding: 10px;
+  border-radius:$br--default;
+  }
+}
+
+
+%nav-item-on {
+  color: $white;
+  background-color: $color-primary;
+}
+
+
+%nav-item-mobile {
+  @include mq(medium-flex) {
+    display: inline-block;
+    margin: 0 em(10px);
+    padding: 10px;
+  }
+}
+
+
+// Buttons
+
+%btn {
+  max-width:100%;
+  padding: 15px 30px;
+  border: 0;
+  border-radius : $br--default;
+  color: $white;
+  text-transform: uppercase;
+  font-size : em(14px);
+  font-weight: $font-weight--medium;
+  transition: opacity $trans-duration;
+  display: block;
+  &:hover {
+    opacity: .75;
+  }
+  &:active {
+    opacity: initial;
+  }
+}
+

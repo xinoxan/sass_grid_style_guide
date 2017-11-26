@@ -1,0 +1,41 @@
+
+
+// Logo
+
+.img {
+@include modifier('logo'){
+	@include img-replace("logo.png", inline-block);
+
+@include mq (small) {
+margin-bottom: 0;
+}
+}
+
+@include modifier('frame'){
+	border: 1px solid palette(grey, x-light);
+	margin-bottom: em(40px);
+
+@include mq(medium-flex){
+margin-top:2.5em;
+}
+
+}
+
+@include modifier('avatar'){
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: em(40px);
+		border-radius: $br--round;
+		@include mq(small) {
+		width: 50%;
+
+		}
+
+		@include mq(medium-flex) {
+		margin-top:em(18px);
+		}
+}
+}
+
+

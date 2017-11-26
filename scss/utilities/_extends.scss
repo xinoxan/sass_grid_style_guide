@@ -69,10 +69,9 @@ margin-right:auto;
 
 
 %nav-item-mobile {
-  @include mq(medium-flex) {
+  @include mq(medium) {
     display: inline-block;
     margin: 0 em(10px);
-    padding: 10px;
   }
 }
 
